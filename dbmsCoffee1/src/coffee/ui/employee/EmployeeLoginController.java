@@ -1,4 +1,4 @@
-package coffee.ui.manager;
+package coffee.ui.employee;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -8,8 +8,6 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ResourceBundle;
 
-import javax.swing.plaf.synth.SynthSeparatorUI;
-
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 
@@ -17,7 +15,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -26,65 +23,62 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
-public class ManagerLoginController implements Initializable{
+public class EmployeeLoginController implements Initializable{
 
 	Connection con;
 	
-		@FXML
-		private AnchorPane loginRootPane;
-		
-		@FXML
-	    private JFXPasswordField managerIDField;
+    @FXML
+    private AnchorPane empLoginRootPane;
 
-	    @FXML
-	    private JFXButton loginButton;
+    @FXML
+    private JFXPasswordField employeeIDField;
 
-	    @FXML
-	    private JFXButton cancelButton;
+    @FXML
+    private JFXButton empLoginButton;
 
-	    @FXML
-	    private Label errorLabel;
+    @FXML
+    private JFXButton cancelButton;
 
-	    @FXML
-	    void attemptLogin(ActionEvent event) {
-	    	String dbPass;
-	    	try{
-	    		String id = new String(managerIDField.getText());
-	    	
-	    		Statement stmt = con.createStatement();
-	    		ResultSet rs = stmt.executeQuery("SELECT man_id FROM MANAGER");
-	    		while(rs.next()){
-	    			dbPass = rs.getString("man_id");
-	    			if(id.equals(dbPass)){
-	    				errorLabel.setText("Works!");
-	    				System.out.println("Found!");
-	    				//**Load new view
-	    				Stage stage = (Stage) loginRootPane.getScene().getWindow();
-	    		    	stage.close();
-	    		    	loadWindow("/coffee/ui/manager/manager_screen.fxml", "");
-	    			}
-	    			else{
-	    				errorLabel.setText("ID not valid, Please Retry");
-	    			}
-	    		}
-	    	}catch(Exception e){
-	    		e.printStackTrace();
-	    	}
-	    }
+    @FXML
+    private Label errorLabel;
 
-	    @FXML
-	    void cancel(ActionEvent event) {
-	    	Stage stage = (Stage) loginRootPane.getScene().getWindow();
-	    	stage.close();
-	    	loadWindow("/coffee/ui/main/coffee_main.fxml", "");
+    @FXML
+    void attemptEmployeeLogin(ActionEvent event) {
+    	String dbPass;
+    	try{
+    		String id = new String(employeeIDField.getText());
+    	
+    		Statement stmt = con.createStatement();
+    		ResultSet rs = stmt.executeQuery("SELECT emp_id FROM EMPLOYEE");
+    		while(rs.next()){
+    			dbPass = rs.getString("emp_id");
+    			if(id.equals(dbPass)){
+    				errorLabel.setText("Works!");
+    				System.out.println("Found!");
+    				//**Load new view
+    			}
+    			else{
+    				errorLabel.setText("ID not valid, Please Retry");
+    			}
+    		}
+    	}catch(Exception e){
+    		e.printStackTrace();
+    	}
+    }
 
-	    }
+    @FXML
+    void cancel(ActionEvent event) {
+    	Stage stage = (Stage) empLoginRootPane.getScene().getWindow();
+    	stage.close();
+    	loadWindow("/coffee/ui/main/coffee_main.fxml", "");
+    }
+
 	
-	    
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {
+	public void initialize(URL location, ResourceBundle resources) {
 		createConnection();
 	}
+
 	
 	void loadWindow(String loc, String title){
     	
@@ -113,6 +107,4 @@ public class ManagerLoginController implements Initializable{
 			e.printStackTrace();
 		}
 	}
-
-	
 }

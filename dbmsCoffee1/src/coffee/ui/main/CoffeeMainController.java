@@ -30,7 +30,8 @@ public class CoffeeMainController implements Initializable{
 
     @FXML
     void openEmployeeLogin(ActionEvent event) {
-
+    	loadWindow("/coffee/ui/employee/employee_login.fxml", "");
+    	((Node) (event.getSource())).getScene().getWindow().hide();
     }
 
     @FXML
