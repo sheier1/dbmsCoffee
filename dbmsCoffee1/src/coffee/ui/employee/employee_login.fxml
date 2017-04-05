@@ -10,17 +10,19 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="loginRootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="420.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coffee.ui.manager.ManagerLoginController">
+<AnchorPane fx:id="empLoginRootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="420.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coffee.ui.employee.EmployeeLoginController">
    <children>
-      <JFXPasswordField fx:id="managerIDField" focusColor="#4a4a4a" labelFloat="true" layoutX="90.0" layoutY="287.0" maxWidth="259.0" minWidth="240.0" prefHeight="37.0" prefWidth="240.0" promptText="ID Number" />
-      <JFXButton fx:id="loginButton" layoutX="90.0" layoutY="382.0" onAction="#attemptLogin" prefHeight="43.0" prefWidth="99.0" style="-fx-background-color: #00BFA5;" text="Login" textFill="WHITE">
+      <JFXPasswordField fx:id="employeeIDField" focusColor="#4a4a4a" labelFloat="true" layoutX="90.0" layoutY="287.0" maxWidth="259.0" minWidth="240.0" prefHeight="37.0" prefWidth="240.0" promptText="ID Number" />
+      <JFXButton fx:id="empLoginButton" layoutX="90.0" layoutY="382.0" onAction="#attemptEmployeeLogin" prefHeight="43.0" prefWidth="99.0" style="-fx-background-color: #64B5F6;" text="Login" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
-         </font></JFXButton>
+         </font>
+      </JFXButton>
       <JFXButton fx:id="cancelButton" layoutX="231.0" layoutY="382.0" onAction="#cancel" prefHeight="43.0" prefWidth="99.0" style="-fx-background-color: #9E9E9E;" text="Cancel" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
-         </font></JFXButton>
+         </font>
+      </JFXButton>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="135.0" layoutY="84.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@/coffee-flat.png" />
@@ -30,12 +32,12 @@
          </effect>
       </ImageView>
       <Label fx:id="errorLabel" layoutX="103.0" layoutY="324.0" prefHeight="21.0" prefWidth="214.0" />
-      <Pane prefHeight="53.0" prefWidth="420.0" style="-fx-background-color: #00BFA5;">
+      <Pane prefHeight="53.0" prefWidth="420.0" style="-fx-background-color: #64B5F6;">
          <effect>
             <DropShadow blurType="GAUSSIAN" />
          </effect>
          <children>
-            <Label layoutX="23.0" layoutY="13.0" text="Manager Login" textFill="WHITE">
+            <Label layoutX="23.0" layoutY="13.0" text="Employee Login" textFill="WHITE">
                <font>
                   <Font name="Bauhaus 93" size="24.0" />
                </font>
