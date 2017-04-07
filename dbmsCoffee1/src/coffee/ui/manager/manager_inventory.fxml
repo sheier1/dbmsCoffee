@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coffee.ui.manager.ManagerInventoryController">
+   <children>
+      <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="950.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <tabs>
+            <Tab text="Add Items">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="addButtton" layoutX="535.0" layoutY="35.0" mnemonicParsing="false" onAction="#addNewItem" prefHeight="31.0" prefWidth="51.0" text="Add" />
+                        <DatePicker fx:id="dateSelector" layoutX="344.0" layoutY="34.0" prefHeight="34.0" prefWidth="184.0" promptText="Enter Expiration Date" />
+                        <TextField fx:id="itemQuantityField" layoutX="173.0" layoutY="32.0" prefHeight="36.0" prefWidth="69.0" promptText="Quantity" />
+                        <TextField fx:id="itemUnitsField" layoutX="263.0" layoutY="33.0" prefHeight="34.0" prefWidth="76.0" promptText="Units" />
+                        <SplitMenuButton fx:id="itemSelect" layoutX="31.0" layoutY="34.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="132.0" text="Items">
+                           <items>
+                              <MenuItem mnemonicParsing="false" text="Stirrers" />
+                              <MenuItem mnemonicParsing="false" text="Stoppers" />
+                              <MenuItem mnemonicParsing="false" text="Light Roast Beans" />
+                              <MenuItem mnemonicParsing="false" text="Medium Roast Beans" />
+                              <MenuItem mnemonicParsing="false" text="Dark Roast Beans" />
+                              <MenuItem mnemonicParsing="false" text="Hot Cup Lids" />
+                              <MenuItem mnemonicParsing="false" text="Cold Cup Lids" />
+                              <MenuItem mnemonicParsing="false" text="Frap Lids" />
+                              <MenuItem mnemonicParsing="false" text="Small Hot Cup" />
+                              <MenuItem mnemonicParsing="false" text="Medium Hot Cup" />
+                              <MenuItem mnemonicParsing="false" text="Large Hot Cup" />
+                              <MenuItem mnemonicParsing="false" text="Small Cold Cup" />
+                              <MenuItem mnemonicParsing="false" text="Medium Cold Cup" />
+                              <MenuItem mnemonicParsing="false" text="Large Cold Cup" />
+                              <MenuItem mnemonicParsing="false" text="Sweet N Low" />
+                              <MenuItem mnemonicParsing="false" text="Cane Sugar" />
+                              <MenuItem mnemonicParsing="false" text="Splenda" />
+                              <MenuItem mnemonicParsing="false" text="Whole Milk" />
+                              <MenuItem mnemonicParsing="false" text="Soy Milk" />
+                              <MenuItem mnemonicParsing="false" text="Skim Milk" />
+                              <MenuItem mnemonicParsing="false" text="Half-Half" />
+                              <MenuItem mnemonicParsing="false" text="Sleeves" />
+                              <MenuItem mnemonicParsing="false" text="Stirrers" />
+                              <MenuItem mnemonicParsing="false" text="Vanilla Syrup" />
+                              <MenuItem mnemonicParsing="false" text="Hazelnut Syrup" />
+                              <MenuItem mnemonicParsing="false" text="Caramel Syrup" />
+                              <MenuItem mnemonicParsing="false" text="Chocolate Syrup" />
+                              <MenuItem mnemonicParsing="false" text="Peppermint" />
+                              <MenuItem mnemonicParsing="false" text="Graham Cracker Crumbs" />
+                              <MenuItem mnemonicParsing="false" text="Marshmellow" />
+                              <MenuItem mnemonicParsing="false" text="Whipped Cream" />
+                              <MenuItem mnemonicParsing="false" text="Pumpkin Spice" />
+                              <MenuItem mnemonicParsing="false" text="Chocolate Spice" />
+                              <MenuItem mnemonicParsing="false" text="Vanilla Spice" />
+                              <MenuItem mnemonicParsing="false" text="Cinnamon Spice" />
+                              <MenuItem mnemonicParsing="false" text="Nutmeg Spice" />
+                              <MenuItem mnemonicParsing="false" text="Napkins" />
+                           </items>
+                        </SplitMenuButton>
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="Remove Items">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="InventoryTable" prefHeight="585.0" prefWidth="526.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="itemCol" prefWidth="75.0" text="Item" />
+                            <TableColumn fx:id="qtyCol" prefWidth="75.0" text="Qty" />
+                              <TableColumn fx:id="expDateCol" prefWidth="75.0" text="Exp_date" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="View All">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

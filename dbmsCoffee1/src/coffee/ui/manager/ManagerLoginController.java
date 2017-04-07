@@ -92,7 +92,7 @@ public class ManagerLoginController implements Initializable{
 			Parent parent = FXMLLoader.load(getClass().getResource(loc));
 			Stage stage = new Stage(StageStyle.DECORATED);
 			stage.setTitle(title);
-			stage.getIcons().add(new Image(getClass().getResourceAsStream("/coffee_icon.png")));
+			stage.getIcons().add(new Image(getClass().getResourceAsStream("/organic-fairtrade-riseup.png")));
 			stage.setScene(new Scene(parent));
 			stage.show();
 		} catch (Exception e) {

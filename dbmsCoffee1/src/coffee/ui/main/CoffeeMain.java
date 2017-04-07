@@ -12,6 +12,8 @@ import javafx.stage.StageStyle;
 
 public class CoffeeMain extends Application {
 	
+	
+	
 	public final void initStyle(StageStyle style){
 	}
 	
@@ -23,7 +25,7 @@ public class CoffeeMain extends Application {
 		
 //		stage.setTitle("Coffee");
 		stage.initStyle(StageStyle.DECORATED);
-		stage.getIcons().add(new Image(getClass().getResourceAsStream("/coffee_icon.png")));
+		stage.getIcons().add(new Image(getClass().getResourceAsStream("/organic-fairtrade-riseup.png")));
 		stage.setScene(scene);
 		stage.show();
 	}

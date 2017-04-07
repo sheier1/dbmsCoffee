@@ -11,7 +11,7 @@
 
 <AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="587.0" prefWidth="939.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coffee.ui.main.CoffeeMainController">
    <children>
-      <HBox layoutX="318.0" layoutY="221.0" prefHeight="146.0" prefWidth="303.0">
+      <HBox alignment="CENTER" layoutX="318.0" layoutY="221.0" prefHeight="146.0" prefWidth="303.0" AnchorPane.bottomAnchor="220.0" AnchorPane.leftAnchor="318.0" AnchorPane.rightAnchor="318.0" AnchorPane.topAnchor="221.0">
          <children>
             <Button fx:id="employeeLogButton" mnemonicParsing="false" onAction="#openEmployeeLogin" prefHeight="145.0" prefWidth="151.0" stylesheets="@coffee_main.css" text="Employee" textFill="WHITE">
                <HBox.margin>
@@ -37,7 +37,7 @@
             </Button>
          </children>
       </HBox>
-      <Pane layoutX="-1.0" prefHeight="71.0" prefWidth="939.0" style="-fx-background-color: #00BFA5;">
+      <Pane layoutX="-1.0" prefHeight="68.0" prefWidth="939.0" style="-fx-background-color: #212121;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <effect>
             <DropShadow blurType="GAUSSIAN" />
          </effect>
