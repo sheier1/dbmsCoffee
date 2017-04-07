@@ -14,7 +14,7 @@ public class ManagerLoginLoader extends Application {
 
 	@Override
 	public void start(Stage stage) throws IOException {
-		Parent root = FXMLLoader.load(getClass().getResource("manager_login.fxml"));
+		Parent root = FXMLLoader.load(getClass().getResource("manager_inventory.fxml"));
 		
 		Scene scene = new Scene(root);
 		
