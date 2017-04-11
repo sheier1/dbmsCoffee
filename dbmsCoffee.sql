@@ -37,6 +37,13 @@ primary key (item));
 create table if not exists INVENTORY
 (item varchar(15) not null,
 qty int(6) not null,
+unit varchar(10) not null,
 expDate date not null, 
 foreign key (item) references PRODUCTS(item));
 
+/*put before addition of items*/
+SET FOREIGN_KEY_CHECKS = 0;
+
+
+/*put after addition of items.*/
+/*SET FOREIGN_KEY_CHECKS = 1;*/
