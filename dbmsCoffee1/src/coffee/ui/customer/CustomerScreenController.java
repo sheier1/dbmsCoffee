@@ -16,7 +16,10 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -24,6 +27,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class CustomerScreenController implements Initializable{
 
@@ -75,7 +80,26 @@ public class CustomerScreenController implements Initializable{
 
     @FXML
     private Label TierLabel;
- //***************************************************************8   
+ //***************************************************************
+    
+    @FXML
+    private JFXButton addCustomerButton;
+
+    @FXML
+    private Label AddCustomerLabel;
+
+    @FXML
+    void addCustomer(ActionEvent event) {
+    	try{
+    		Parent root = FXMLLoader.load(getClass().getResource("customer_add.fxml"));
+    		Stage stage = new Stage();
+    		stage.initStyle(StageStyle.UTILITY);
+    		stage.setScene(new Scene(root));
+    		stage.show();
+    	} catch(Exception e){
+    		System.out.println("Can't load window");
+    	}
+    }
 
     @FXML
     void searchCustomerID(ActionEvent event) {

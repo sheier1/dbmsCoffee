@@ -58,5 +58,11 @@
             <Font size="20.0" />
          </font>
       </Text>
+      <JFXButton fx:id="addCustomerButton" layoutX="878.0" layoutY="45.0" onAction="#addCustomer" style="-fx-background-color: #2E7D32;" text="+" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </JFXButton>
+      <Label fx:id="AddCustomerLabel" layoutX="765.0" layoutY="50.0" text="Add Customer:" />
    </children>
 </AnchorPane>
