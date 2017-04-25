@@ -12,6 +12,7 @@ import javax.swing.plaf.synth.SynthSeparatorUI;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -33,8 +34,11 @@ public class ManagerLoginController implements Initializable{
 		@FXML
 		private AnchorPane loginRootPane;
 		
-		@FXML
-	    private JFXPasswordField managerIDField;
+	    @FXML
+	    private JFXPasswordField managerPassField;
+
+	    @FXML
+	    private JFXTextField managerIDField;
 
 	    @FXML
 	    private JFXButton loginButton;
@@ -47,15 +51,18 @@ public class ManagerLoginController implements Initializable{
 
 	    @FXML
 	    void attemptLogin(ActionEvent event) {
-	    	String dbPass;
+	    	String dbID;
+	    	String dbPwd;
 	    	try{
 	    		String id = new String(managerIDField.getText());
+	    		String pwd = new String(managerPassField.getText());
 	    	
 	    		Statement stmt = con.createStatement();
-	    		ResultSet rs = stmt.executeQuery("SELECT man_id FROM MANAGER");
+	    		ResultSet rs = stmt.executeQuery("SELECT man_id, pwd FROM MANAGER");
 	    		while(rs.next()){
-	    			dbPass = rs.getString("man_id");
-	    			if(id.equals(dbPass)){
+	    			dbID = rs.getString("man_id");
+	    			dbPwd = rs.getString("pwd");
+	    			if(id.equals(dbID) && pwd.equals(dbPwd)){
 	    				errorLabel.setText("Works!");
 	    				System.out.println("Found!");
 	    				//**Load new view

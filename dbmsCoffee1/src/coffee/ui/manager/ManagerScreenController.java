@@ -29,13 +29,22 @@ public class ManagerScreenController implements Initializable{
     private AnchorPane rootPane;
 
     @FXML
-    void openCustomerView(ActionEvent event) {
-
+    void openCustomerView(ActionEvent event) throws IOException {
+    	AnchorPane pane = FXMLLoader.load(getClass().getResource("/coffee/ui/customer/customer_screen.fxml"));
+    	AnchorPane.setBottomAnchor(pane, 0.0);
+    	AnchorPane.setLeftAnchor(pane, 0.0);
+    	AnchorPane.setRightAnchor(pane, 0.0);
+    	AnchorPane.setTopAnchor(pane, 0.0);
+    	FadeTransition fadeIn = new FadeTransition(Duration.millis(2000), pane);
+    	fadeIn.setFromValue(0.0);
+    	fadeIn.setToValue(1.0);
+    	fadeIn.play();
+    	rootPane.getChildren().setAll(pane);
     }
 
     @FXML
     void openInventoryView(ActionEvent event) throws IOException {
-    	AnchorPane pane = FXMLLoader.load(getClass().getResource("manager_inventory.fxml"));
+    	AnchorPane pane = FXMLLoader.load(getClass().getResource("/coffee/ui/inventory/manager_inventory.fxml"));
     	AnchorPane.setBottomAnchor(pane, 0.0);
     	AnchorPane.setLeftAnchor(pane, 0.0);
     	AnchorPane.setRightAnchor(pane, 0.0);

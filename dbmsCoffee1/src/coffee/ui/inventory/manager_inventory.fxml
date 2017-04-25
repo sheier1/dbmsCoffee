@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TableColumn?>
@@ -11,26 +14,29 @@
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coffee.ui.manager.ManagerInventoryController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coffee.ui.inventory.ManagerInventoryController">
    <children>
-      <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="950.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="950.0" style="-fx-background-color: #ffffff;" stylesheets="@manager_inventory.css" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <tabs>
             <Tab text="Add Items">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
                      <children>
-                        <Button fx:id="addButtton" layoutX="535.0" layoutY="35.0" mnemonicParsing="false" onAction="#addNewItem" prefHeight="31.0" prefWidth="51.0" text="Add" />
-                        <DatePicker fx:id="dateSelector" layoutX="344.0" layoutY="34.0" prefHeight="34.0" prefWidth="184.0" promptText="Enter Expiration Date" />
-                        <TextField fx:id="itemQuantityField" layoutX="173.0" layoutY="32.0" prefHeight="36.0" prefWidth="69.0" promptText="Quantity" />
-                        <TextField fx:id="itemUnitsField" layoutX="263.0" layoutY="33.0" prefHeight="34.0" prefWidth="76.0" promptText="Units" />
-                        <SplitMenuButton fx:id="itemSelect" layoutX="31.0" layoutY="34.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="132.0" text="Items">
+                        <Button fx:id="addButtton" layoutX="683.0" layoutY="50.0" mnemonicParsing="false" onAction="#addNewItem" prefHeight="40.0" prefWidth="72.0" style="-fx-background-color: #4a4a4a;" text="Add" textFill="WHITE" />
+                        <DatePicker fx:id="dateSelector" layoutX="470.0" layoutY="49.0" prefHeight="40.0" prefWidth="191.0" promptText="Enter Expiration Date" />
+                        <TextField fx:id="itemQuantityField" layoutX="306.0" layoutY="49.0" prefHeight="40.0" prefWidth="72.0" promptText="Quantity" />
+                        <TextField fx:id="itemUnitsField" layoutX="385.0" layoutY="49.0" prefHeight="40.0" prefWidth="72.0" promptText="Units" />
+                        <Label fx:id="successLabel" layoutX="778.0" layoutY="49.0" prefHeight="40.0" prefWidth="158.0" textFill="#a20025" />
+                        <MenuButton fx:id="itemSelect" layoutX="214.0" layoutY="49.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="83.0" text="Items">
                            <items>
+                              <MenuItem mnemonicParsing="false" text="Napkins" />
                               <MenuItem mnemonicParsing="false" text="Stirrers" />
                               <MenuItem mnemonicParsing="false" text="Stoppers" />
                               <MenuItem mnemonicParsing="false" text="Light Roast Beans" />
                               <MenuItem mnemonicParsing="false" text="Medium Roast Beans" />
                               <MenuItem mnemonicParsing="false" text="Dark Roast Beans" />
                               <MenuItem mnemonicParsing="false" text="Hot Cup Lids" />
+                              <MenuItem mnemonicParsing="false" text="Sleeves" />
                               <MenuItem mnemonicParsing="false" text="Cold Cup Lids" />
                               <MenuItem mnemonicParsing="false" text="Frap Lids" />
                               <MenuItem mnemonicParsing="false" text="Small Hot Cup" />
@@ -46,8 +52,6 @@
                               <MenuItem mnemonicParsing="false" text="Soy Milk" />
                               <MenuItem mnemonicParsing="false" text="Skim Milk" />
                               <MenuItem mnemonicParsing="false" text="Half-Half" />
-                              <MenuItem mnemonicParsing="false" text="Sleeves" />
-                              <MenuItem mnemonicParsing="false" text="Stirrers" />
                               <MenuItem mnemonicParsing="false" text="Vanilla Syrup" />
                               <MenuItem mnemonicParsing="false" text="Hazelnut Syrup" />
                               <MenuItem mnemonicParsing="false" text="Caramel Syrup" />
@@ -61,30 +65,41 @@
                               <MenuItem mnemonicParsing="false" text="Vanilla Spice" />
                               <MenuItem mnemonicParsing="false" text="Cinnamon Spice" />
                               <MenuItem mnemonicParsing="false" text="Nutmeg Spice" />
-                              <MenuItem mnemonicParsing="false" text="Napkins" />
                            </items>
-                        </SplitMenuButton>
+                        </MenuButton>
+                        <JFXTextField fx:id="itemTextField" focusColor="#1b5e20" layoutX="14.0" layoutY="55.0" />
                      </children>
                   </AnchorPane>
                </content>
             </Tab>
             <Tab text="Remove Items">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
                      <children>
-                        <TableView fx:id="InventoryTable" prefHeight="585.0" prefWidth="526.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="InventoryTable" editable="true" layoutX="445.0" layoutY="77.0" prefHeight="494.0" prefWidth="452.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="53.0" AnchorPane.rightAnchor="53.0" AnchorPane.topAnchor="77.0">
                           <columns>
-                            <TableColumn fx:id="itemCol" prefWidth="75.0" text="Item" />
-                            <TableColumn fx:id="qtyCol" prefWidth="75.0" text="Qty" />
-                              <TableColumn fx:id="expDateCol" prefWidth="75.0" text="Exp_date" />
+                            <TableColumn fx:id="itemCol" editable="false" minWidth="100.0" prefWidth="200.0" text="items" />
+                            <TableColumn fx:id="qtyCol" minWidth="20.0" prefWidth="100.0" text="qty" />
+                              <TableColumn fx:id="unitCol" minWidth="20.0" prefWidth="100.0" text="unit" />
+                              <TableColumn fx:id="expDateCol" minWidth="50.0" prefWidth="150.0" text="expDate" />
                           </columns>
                         </TableView>
+                        <JFXButton fx:id="removeButton" alignment="CENTER" contentDisplay="CENTER" layoutX="823.0" layoutY="30.0" onAction="#removeItem" prefHeight="40.0" prefWidth="74.0" style="-fx-background-color: #a20025;" text="Remove" textFill="WHITE" AnchorPane.rightAnchor="53.0" />
                      </children></AnchorPane>
                </content>
             </Tab>
             <Tab text="View All">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
+                     <children>
+                        <TableView fx:id="viewAllTable" layoutX="27.0" layoutY="76.0" prefHeight="481.0" prefWidth="897.0">
+                          <columns>
+                            <TableColumn prefWidth="75.0" text="items" />
+                            <TableColumn prefWidth="75.0" text="qty" />
+                              <TableColumn prefWidth="75.0" text="expDate" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
                </content>
             </Tab>
          </tabs>

@@ -10,6 +10,7 @@ import java.util.ResourceBundle;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
+import com.jfoenix.controls.JFXTextField;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,7 +32,10 @@ public class EmployeeLoginController implements Initializable{
     private AnchorPane empLoginRootPane;
 
     @FXML
-    private JFXPasswordField employeeIDField;
+    private JFXPasswordField employeePassField;
+
+    @FXML
+    private JFXTextField employeeIDField;
 
     @FXML
     private JFXButton empLoginButton;
@@ -44,15 +48,17 @@ public class EmployeeLoginController implements Initializable{
 
     @FXML
     void attemptEmployeeLogin(ActionEvent event) {
-    	String dbPass;
+    	String dbID;
+    	String dbPwd;
     	try{
     		String id = new String(employeeIDField.getText());
-    	
+    		String pwd = new String(employeePassField.getText());
     		Statement stmt = con.createStatement();
-    		ResultSet rs = stmt.executeQuery("SELECT emp_id FROM EMPLOYEE");
+    		ResultSet rs = stmt.executeQuery("SELECT emp_id, pwd FROM EMPLOYEE");
     		while(rs.next()){
-    			dbPass = rs.getString("emp_id");
-    			if(id.equals(dbPass)){
+    			dbID = rs.getString("emp_id");
+    			dbPwd = rs.getString("pwd");
+    			if(id.equals(dbID) && pwd.equals(dbPwd)){
     				errorLabel.setText("Works!");
     				System.out.println("Found!");
     				//**Load new view

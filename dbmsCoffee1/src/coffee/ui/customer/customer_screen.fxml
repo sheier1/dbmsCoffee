@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="950.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coffee.ui.customer.CustomerScreenController">
+   <children>
+      <TableView fx:id="customerTable" layoutX="72.0" layoutY="312.0" prefHeight="195.0" prefWidth="806.0">
+         <columns>
+            <TableColumn fx:id="FnameCol" prefWidth="213.0" text="Fname" />
+            <TableColumn fx:id="LnameCol" prefWidth="224.0" text="Lname" />
+            <TableColumn fx:id="IDCol" minWidth="0.0" prefWidth="196.0" text="ID" />
+            <TableColumn fx:id="TierCol" prefWidth="172.0" text="Tier" />
+         </columns>
+      </TableView>
+      <JFXTextField fx:id="customerIDField" focusColor="#4a4a4a" labelFloat="true" layoutX="72.0" layoutY="42.0" promptText="Customer ID" />
+      <JFXButton fx:id="searchButton" layoutX="259.0" layoutY="45.0" onAction="#searchCustomerID" style="-fx-background-color: #4a4a4a;" text="Search" textFill="WHITE" />
+      <Label fx:id="errorLabel" layoutX="475.0" layoutY="45.0" prefHeight="31.0" prefWidth="318.0" textFill="#a20025">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="tierImage" fitHeight="31.0" fitWidth="33.0" layoutX="513.0" layoutY="168.0" pickOnBounds="true" preserveRatio="true" />
+      <Label fx:id="NameLabel" layoutX="74.0" layoutY="125.0" text="Name:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="IDLabel" layoutX="326.0" layoutY="125.0" text="ID:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="TierLabel" layoutX="510.0" layoutY="125.0" text="Tier:">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Text fx:id="dispFnameField" layoutX="72.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="90.6708984375">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="dispLnameField" layoutX="166.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="90.67088812589645">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+      <Text fx:id="dispIDField" layoutX="324.0" layoutY="191.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="130.6708984375">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

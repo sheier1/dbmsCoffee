@@ -2,6 +2,7 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.image.Image?>
@@ -10,15 +11,14 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="empLoginRootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="420.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coffee.ui.employee.EmployeeLoginController">
+<AnchorPane fx:id="empLoginRootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="525.0" prefWidth="420.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coffee.ui.employee.EmployeeLoginController">
    <children>
-      <JFXPasswordField fx:id="employeeIDField" focusColor="#4a4a4a" labelFloat="true" layoutX="90.0" layoutY="287.0" maxWidth="259.0" minWidth="240.0" prefHeight="37.0" prefWidth="240.0" promptText="ID Number" />
-      <JFXButton fx:id="empLoginButton" buttonType="RAISED" layoutX="90.0" layoutY="382.0" onAction="#attemptEmployeeLogin" prefHeight="43.0" prefWidth="99.0" style="-fx-background-color: #212121;" text="Login" textFill="WHITE">
+      <JFXButton fx:id="empLoginButton" buttonType="RAISED" layoutX="88.0" layoutY="407.0" onAction="#attemptEmployeeLogin" prefHeight="43.0" prefWidth="99.0" style="-fx-background-color: #212121;" text="Login" textFill="WHITE">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
       </JFXButton>
-      <JFXButton fx:id="cancelButton" buttonType="RAISED" layoutX="231.0" layoutY="382.0" onAction="#cancel" prefHeight="43.0" prefWidth="99.0" style="-fx-background-color: #ffffff;" text="Cancel">
+      <JFXButton fx:id="cancelButton" buttonType="RAISED" layoutX="233.0" layoutY="407.0" onAction="#cancel" prefHeight="43.0" prefWidth="99.0" style="-fx-background-color: #ffffff;" text="Cancel">
          <font>
             <Font name="System Bold" size="15.0" />
          </font>
@@ -31,7 +31,7 @@
             <DropShadow blurType="GAUSSIAN" />
          </effect>
       </ImageView>
-      <Label fx:id="errorLabel" layoutX="103.0" layoutY="324.0" prefHeight="21.0" prefWidth="214.0" textFill="#a20025" />
+      <Label fx:id="errorLabel" layoutX="103.0" layoutY="360.0" prefHeight="21.0" prefWidth="214.0" textFill="#a20025" />
       <Pane prefHeight="53.0" prefWidth="420.0" style="-fx-background-color: #212121;">
          <effect>
             <DropShadow blurType="GAUSSIAN" />
@@ -44,5 +44,7 @@
             </Label>
          </children>
       </Pane>
+      <JFXPasswordField fx:id="employeePassField" focusColor="#4a4a4a" labelFloat="true" layoutX="90.0" layoutY="323.0" maxWidth="240.0" minWidth="240.0" prefHeight="37.0" prefWidth="240.0" promptText="Password" />
+      <JFXTextField fx:id="employeeIDField" focusColor="#4a4a4a" labelFloat="true" layoutX="90.0" layoutY="263.0" maxWidth="240.0" minWidth="214.0" prefHeight="37.0" prefWidth="240.0" promptText="ID Number" />
    </children>
 </AnchorPane>
