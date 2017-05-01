@@ -72,7 +72,7 @@
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab text="Remove Items">
+            <Tab text="View All">
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
                      <children>
@@ -85,20 +85,9 @@
                           </columns>
                         </TableView>
                         <JFXButton fx:id="removeButton" alignment="CENTER" contentDisplay="CENTER" layoutX="823.0" layoutY="30.0" onAction="#removeItem" prefHeight="40.0" prefWidth="74.0" style="-fx-background-color: #a20025;" text="Remove" textFill="WHITE" AnchorPane.rightAnchor="53.0" />
-                     </children></AnchorPane>
-               </content>
-            </Tab>
-            <Tab text="View All">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #ffffff;">
-                     <children>
-                        <TableView fx:id="viewAllTable" layoutX="27.0" layoutY="76.0" prefHeight="481.0" prefWidth="897.0">
-                          <columns>
-                            <TableColumn prefWidth="75.0" text="items" />
-                            <TableColumn prefWidth="75.0" text="qty" />
-                              <TableColumn prefWidth="75.0" text="expDate" />
-                          </columns>
-                        </TableView>
+                        <JFXTextField fx:id="itemSearchField" focusColor="#4a4a4a" layoutX="53.0" layoutY="32.0" promptText="item" />
+                        <JFXButton fx:id="searchButton" layoutX="240.0" layoutY="35.0" onAction="#searchItem" style="-fx-background-color: #4a4a4a;" text="Search" textFill="WHITE" />
+                        <JFXButton fx:id="refreshButton" layoutX="320.0" layoutY="35.0" onAction="#refreshTable" prefWidth="71.0" text="Refresh" />
                      </children></AnchorPane>
                </content>
             </Tab>

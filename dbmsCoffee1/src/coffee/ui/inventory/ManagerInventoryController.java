@@ -68,7 +68,43 @@ public class ManagerInventoryController implements Initializable{
 	@FXML
 	private TableColumn<Inventory, String> expDateCol;
 	    
+	@FXML
+	private JFXTextField itemSearchField;
+
+	@FXML
+	private JFXButton searchButton;
 	
+	@FXML
+    private JFXButton refreshButton;
+	
+	@FXML
+    void refreshTable(ActionEvent event) {
+		itemSearchField.clear();
+		refreshTable();
+    }
+	
+	@FXML
+    void searchItem(ActionEvent event) {
+		try{
+			list.clear();
+			String searchedItem = itemSearchField.getText();
+			Statement stmt = con .createStatement();
+			ResultSet rs = stmt.executeQuery("SELECT * FROM INVENTORY WHERE item LIKE '%"+searchedItem+"%'");
+			while(rs.next()){
+				String item = rs.getString("item");
+				Integer qty = rs.getInt("qty");
+				String unit = rs.getString("unit");
+				String expDate = rs.getString("expDate");
+				System.out.println(item + " " + qty + " " +unit);
+				list.add(new Inventory(item, qty, unit, expDate));
+			}
+			stmt.close();
+		}catch(Exception e){
+			e.printStackTrace();
+			System.out.println("ITEM NOT FOUND");
+		}
+		InventoryTable.getItems().setAll(list);
+    }
 	
 	    
 	@FXML
@@ -81,7 +117,7 @@ public class ManagerInventoryController implements Initializable{
 			 */
 			Inventory inv = InventoryTable.getSelectionModel().getSelectedItem(); //get mouse selection
 			String item = inv.getItem();
-			PreparedStatement stmt = con.prepareStatement("DELETE FROM INVENTORY WHERE items = ?");
+			PreparedStatement stmt = con.prepareStatement("DELETE FROM INVENTORY WHERE item = ?");
 			stmt.setString(1, item); //setting item to be deleted
 			stmt.executeUpdate(); //item deleted
 			System.out.println(item + "WAS REMOVED FROM INVENTORY");
@@ -148,12 +184,16 @@ public class ManagerInventoryController implements Initializable{
 
     //get String of selected item from MenuButtton
     void getSelectedItem(){
+    	try{
     	for (final MenuItem item : itemSelect.getItems()) {
             item.setOnAction((event) -> {               
                 System.out.println("Selected: " +item.getText());
                 itemTextField.setText(item.getText()); //insertInto selected item into text field
             });
         }
+    	} catch(Exception e){
+    		e.printStackTrace();
+    	}
     }
     
     @FXML

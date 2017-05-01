@@ -148,6 +148,7 @@ public class CustomerScreenController implements Initializable{
     		stmt.close();
     	}catch(Exception e){
     		e.printStackTrace();
+    		errorLabel.setText("Invalid Customer ID");
     	}
     	customerTable.getItems().setAll(list);
     }
