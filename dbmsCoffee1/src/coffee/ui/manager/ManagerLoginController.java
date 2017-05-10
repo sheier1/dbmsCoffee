@@ -3,6 +3,7 @@ package coffee.ui.manager;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -30,6 +31,8 @@ import javafx.stage.StageStyle;
 public class ManagerLoginController implements Initializable{
 
 	Connection con;
+	public static String pubID;
+//	String currentLogged; 
 	
 		@FXML
 		private AnchorPane loginRootPane;
@@ -65,10 +68,22 @@ public class ManagerLoginController implements Initializable{
 	    			if(id.equals(dbID) && pwd.equals(dbPwd)){
 	    				errorLabel.setText("Works!");
 	    				System.out.println("Found!");
+	    				pubID = id;
+	    				//----------------------------------------------
+	    				//STORE CURRENT LOGGED USER
+//	    				currentLogged = id;
+//	    				PreparedStatement stmtLog = con.prepareStatement("INSERT INTO CURRENTLOGGED VALUES(?)");
+//	    				stmtLog.setString(1, currentLogged);
+//	    				System.out.println("Added current logged");
+//	    				stmtLog.execute();
+	    				//--------------------------------------------
+	    				
+	    				
 	    				//**Load new view
 	    				Stage stage = (Stage) loginRootPane.getScene().getWindow();
 	    		    	stage.close();
 	    		    	loadWindow("/coffee/ui/manager/manager_screen.fxml", "");
+//	    		    	stmtLog.close();
 	    			}
 	    			else{
 	    				errorLabel.setText("ID not valid, Please Retry");
@@ -77,6 +92,7 @@ public class ManagerLoginController implements Initializable{
 	    	}catch(Exception e){
 	    		e.printStackTrace();
 	    	}
+	    	
 	    }
 
 	    @FXML

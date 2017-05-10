@@ -12,11 +12,11 @@
          <left>
             <VBox prefHeight="761.0" prefWidth="133.0" style="-fx-background-color: #ffffff;" BorderPane.alignment="CENTER">
                <children>
-                  <JFXButton fx:id="inventoryButton" buttonType="RAISED" onAction="#openInventoryView" prefHeight="117.0" prefWidth="137.0" style="-fx-background-color: #212121;" text="Inventory" textFill="WHITE">
+                  <JFXButton fx:id="timeSheetButton" buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#openTimeSheetView" prefHeight="117.0" prefWidth="137.0" style="-fx-background-color: #212121;" text="TimeSheet" textFill="WHITE">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin></JFXButton>
-                  <JFXButton fx:id="timeSheetButton" buttonType="RAISED" layoutX="10.0" layoutY="10.0" onAction="#openTimeSheetView" prefHeight="117.0" prefWidth="137.0" style="-fx-background-color: #212121;" text="TimeSheet" textFill="WHITE">
+                  <JFXButton fx:id="inventoryButton" buttonType="RAISED" onAction="#openInventoryView" prefHeight="117.0" prefWidth="137.0" style="-fx-background-color: #212121;" text="Inventory" textFill="WHITE">
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin></JFXButton>
@@ -24,6 +24,11 @@
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin></JFXButton>
+                  <JFXButton fx:id="logoutButon" buttonType="RAISED" onAction="#logOut" style="-fx-background-color: #a20025;" text="Logout" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </JFXButton>
                </children>
             </VBox>
          </left>

@@ -27,6 +27,7 @@ import javafx.stage.StageStyle;
 public class EmployeeLoginController implements Initializable{
 
 	Connection con;
+	public static String pubID;
 	
     @FXML
     private AnchorPane empLoginRootPane;
@@ -61,7 +62,12 @@ public class EmployeeLoginController implements Initializable{
     			if(id.equals(dbID) && pwd.equals(dbPwd)){
     				errorLabel.setText("Works!");
     				System.out.println("Found!");
+    				pubID = id;
     				//**Load new view
+    				
+    				Stage stage = (Stage) empLoginRootPane.getScene().getWindow();
+    		    	stage.close();
+    		    	loadWindow("/coffee/ui/employee/employee_screen.fxml", "");
     			}
     			else{
     				errorLabel.setText("ID not valid, Please Retry");

@@ -12,15 +12,13 @@ import javafx.stage.StageStyle;
 
 public class CoffeeMain extends Application {
 	
-	
-	
 	public final void initStyle(StageStyle style){
 	}
 	
 	@Override
 	public void start(Stage stage) throws IOException {
 		Parent root = FXMLLoader.load(getClass().getResource("coffee_main.fxml"));
-		
+
 		Scene scene = new Scene(root);
 		
 //		stage.setTitle("Coffee");
@@ -28,10 +26,15 @@ public class CoffeeMain extends Application {
 		stage.getIcons().add(new Image(getClass().getResourceAsStream("/organic-fairtrade-riseup.png")));
 		stage.setScene(scene);
 		stage.show();
+	      
+	        
 	}
 
 
 	public static void main(String[] args) {
 		launch(args);
 	}
+	
+
+
 }
