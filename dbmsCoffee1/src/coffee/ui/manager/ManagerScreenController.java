@@ -34,6 +34,9 @@ public class ManagerScreenController implements Initializable{
 	
     @FXML
     private JFXButton inventoryButton;
+    
+    @FXML
+    private JFXButton employeesButton;
 
     @FXML
     private JFXButton customerButton;
@@ -47,6 +50,20 @@ public class ManagerScreenController implements Initializable{
     @FXML
     void openTimeSheetView(ActionEvent event) throws IOException {
     	AnchorPane pane = FXMLLoader.load(getClass().getResource("/coffee/ui/timesheet/timesheet_view.fxml"));
+    	AnchorPane.setBottomAnchor(pane, 0.0);
+    	AnchorPane.setLeftAnchor(pane, 0.0);
+    	AnchorPane.setRightAnchor(pane, 0.0);
+    	AnchorPane.setTopAnchor(pane, 0.0);
+    	FadeTransition fadeIn = new FadeTransition(Duration.millis(2000), pane);
+    	fadeIn.setFromValue(0.0);
+    	fadeIn.setToValue(1.0);
+    	fadeIn.play();
+    	rootPane.getChildren().setAll(pane);
+    }
+    
+    @FXML
+    void mangdempView(ActionEvent event) throws IOException {
+    	AnchorPane pane = FXMLLoader.load(getClass().getResource("/coffee/ui/mangdemp/mangdemp_view.fxml"));
     	AnchorPane.setBottomAnchor(pane, 0.0);
     	AnchorPane.setLeftAnchor(pane, 0.0);
     	AnchorPane.setRightAnchor(pane, 0.0);

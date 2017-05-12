@@ -20,6 +20,11 @@
                      <VBox.margin>
                         <Insets bottom="10.0" />
                      </VBox.margin></JFXButton>
+                  <JFXButton fx:id="employeesButton" buttonType="RAISED" layoutX="10.0" layoutY="137.0" onAction="#mangdempView" prefHeight="117.0" prefWidth="137.0" style="-fx-background-color: #212121;" text="Employees" textFill="WHITE">
+                     <VBox.margin>
+                        <Insets bottom="10.0" />
+                     </VBox.margin>
+                  </JFXButton>
                   <JFXButton fx:id="customerButton" buttonType="RAISED" layoutX="10.0" layoutY="127.0" onAction="#openCustomerView" prefHeight="117.0" prefWidth="137.0" style="-fx-background-color: #212121;" text="Customer" textFill="WHITE">
                      <VBox.margin>
                         <Insets bottom="10.0" />

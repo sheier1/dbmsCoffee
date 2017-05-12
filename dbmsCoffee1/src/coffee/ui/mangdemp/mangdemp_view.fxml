@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane fx:id="rootPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="712.0" prefWidth="1117.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="coffee.ui.mangdemp.MangdEmpController">
+   <children>
+      <TableView fx:id="CurrentEmployeeTable" layoutX="64.0" layoutY="155.0" prefHeight="712.0" prefWidth="1117.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <columns>
+          <TableColumn fx:id="numIDCol" prefWidth="151.0" text="num_id" />
+          <TableColumn fx:id="FnameCol" prefWidth="213.0" text="Fname" />
+            <TableColumn fx:id="LnameCol" prefWidth="227.0" text="Lname" />
+            <TableColumn fx:id="bdayCol" prefWidth="225.0" text="bday" />
+            <TableColumn fx:id="payrateCol" prefWidth="173.0" text="pay_rate" />
+        </columns>
+      </TableView>
+   </children>
+</AnchorPane>
